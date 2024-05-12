@@ -16,12 +16,13 @@ function App() {
     })
 
 
-  return (
-    <div>
-      <CreateTodo></CreateTodo>
-      <Todos todos = {todos}></Todos>
-    </div>
-  ) 
+    return (
+      <div className="container"> 
+        <h1 className="title">Todo List</h1>
+        <CreateTodo />
+        <Todos todos={todos} />
+      </div>
+    );
 }
 
 export default App

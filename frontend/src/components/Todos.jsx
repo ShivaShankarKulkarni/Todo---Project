@@ -1,12 +1,17 @@
-
+import React from 'react';
+import '../App.css';
 export function Todos({todos}){
-    return <div>
-        {todos.map(function(todo){
-        return <div>
-            <h1>{todo.title}</h1>
-            <h2>{todo.description}</h2>
-            <button>{todo.completed == true ? "completed": "Mark as Complete"}</button>
+    return (
+        <div className="todos"> 
+            {todos.map(todo => (
+                <div className="todo" key={todo.id}> 
+                    <h1 className="todo-title">{todo.title}</h1> 
+                    <h2 className="todo-description">{todo.description}</h2>
+                    <button className="todo-button">
+                        {todo.completed ? "Completed" : "Mark as Complete"}
+                    </button>
+                </div>
+            ))}
         </div>
-    })}
-    </div>
+    );
 }
